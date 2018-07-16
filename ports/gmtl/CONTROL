@@ -1,0 +1,3 @@
+Source: gmtl
+Version: 0.7.0
+Description: Generic Graphics Toolkit, a library of generic programming primitives to write applications that adapt to whatever underlying graphics system the developer is using.
