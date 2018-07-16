@@ -10,15 +10,12 @@ vcpkg_from_github(
 
 vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
-    #PREFER_NINJA # Disable this option if project cannot be built with Ninja
-    # OPTIONS -DUSE_THIS_IN_ALL_BUILDS=1 -DUSE_THIS_TOO=2
-    # OPTIONS_RELEASE -DOPTIMIZE=1
-    # OPTIONS_DEBUG -DDEBUGGABLE=1
 )
 vcpkg_install_cmake()
 
 # Delete redundant directories
-file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug ${CURRENT_PACKAGES_DIR}/share/doc)
+file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug)
 
 # Handle copyright
 file(INSTALL ${SOURCE_PATH}/LICENSE DESTINATION ${CURRENT_PACKAGES_DIR}/share/gmtl RENAME copyright)
+file(INSTALL ${SOURCE_PATH}/LICENSE.addendum DESTINATION ${CURRENT_PACKAGES_DIR}/share/gmtl)
